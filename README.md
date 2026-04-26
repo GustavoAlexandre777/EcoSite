@@ -27,5 +27,10 @@ Você pode acessar a versão final e "ao vivo" do site através do link abaixo:
 
 👉 [CLIQUE AQUI PARA ACESSAR O SITE](https://ecologiaesustentabilidade.netlify.app/#)
 
+## 📺 Vídeo de Apresentação
+Confira a apresentação completa do projeto através do link abaixo:
+
+🔗 [Assistir Vídeo do Projeto](https://youtu.be/e96SvE-tHGw?si=KLr3tDw6Rohn4VBO)
+
 ---
 *Trabalho Acadêmico - 2026*
