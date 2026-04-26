@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia e Sustentabilidade</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf4;
+            color: #2e4d36;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+        }
+
+        header {
+            background-color: #81c784;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode header {
+            background-color: #333;
+        }
+
+        .plant-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        nav {
+            background-color: #66bb6a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode nav {
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 15px;
+            font-weight: bold;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .dark-mode nav a {
+            color: #ccc;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #c8e6c9;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode footer {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+      
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #81c784;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+        }
+
+        .dark-mode .back-to-top {
+            background-color: #333;
+        }
+
+        .back-to-top:hover {
+            background-color: #66bb6a;
+        }
+
+        .dark-mode .back-to-top:hover {
+            background-color: #555;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+       
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1001;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #555;
+        }
+
+        .dark-mode .dark-mode-toggle:hover {
+            background-color: #ddd;
+        }
+        nav {  
+            background-color: #66bb6a;  /* Cor do fundo no modo claro */  
+            padding: 10px;  
+        }  
+        nav a {  
+            color: white;  
+            text-decoration: none;  
+            padding: 10px 15px;  
+            transition: background-color 0.3s, transform 0.3s;  
+        }  
+
+        nav a:hover {  
+            background-color: #5ea361;  
+            transform: scale(1.2);  
+        }  
+        .dark-mode nav {  
+            background-color: #333;  
+        }  
+        .dark-mode nav a {  
+            color: #e0e0e0; 
+        }  
+        .dark-mode nav a:hover {  
+            background-color: #555;  
+        }   
+    </style>
+</head>
+<body>
+
+<button id="theme-icon" class="dark-mode-toggle">&#x1F319;</button>
+
+
+<header>
+    <h1>Ecologia e Sustentabilidade</h1>
+    <p>Preservar o planeta é preservar a vida 🌱</p>
+    <img class="plant-img" src="https://images.pexels.com/photos/101841/pexels-photo-101841.jpeg?cs=srgb&dl=pexels-asphotograpy-101841.jpg&fm=jpg" alt="Planta Verde">
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('ecologia')">Ecologia</a>
+    <a href="#" onclick="showSection('sustentabilidade')">Sustentabilidade</a>
+    <a href="#" onclick="showSection('desmatamento')">Desmatamento</a>
+    <a href="#" onclick="showSection('oceanos')">Poluição dos Oceanos</a>
+    <a href="#" onclick="showSection('como-ajudar')">Como Ajudar</a>
+</nav>
+
+
+<main>
+      <section id="ecologia" class="active">
+        <h2>O que é Ecologia?</h2>
+        <p>
+            Ecologia é o ramo da Biologia que estuda as interações entre os seres vivos e o ambiente em que vivem. Ela investiga como os organismos se relacionam entre si e com os fatores físicos e químicos do meio, como luz, temperatura, umidade, solo, entre outros. A ecologia não apenas observa os seres individualmente, mas analisa comunidades inteiras e os ecossistemas, buscando entender o equilíbrio natural e os impactos causados pelas atividades humanas. <br><br>
+
+            O estudo da ecologia é essencial para compreender o funcionamento dos ecossistemas e a importância da biodiversidade para a manutenção da vida no planeta. Ela também ajuda a identificar os efeitos das ações humanas sobre o meio ambiente, como desmatamento, poluição, mudanças climáticas e extinção de espécies. Com base nesses conhecimentos, a ecologia propõe soluções e estratégias para minimizar os danos ambientais e promover a sustentabilidade. <br><br>
+
+            Existem diversos níveis de organização ecológica: indivíduos, populações (grupo de indivíduos da mesma espécie que vivem em uma área), comunidades (várias populações interagindo), ecossistemas (comunidades mais os fatores abióticos) e a biosfera (conjunto de todos os ecossistemas da Terra). Esses níveis ajudam os cientistas a compreender a complexidade das interações na natureza. <br><br>
+
+            A ecologia também está presente em nosso dia a dia. Práticas como a reciclagem, o uso consciente da água, a preservação de áreas verdes e a redução do consumo de plástico são atitudes ecológicas que contribuem para um planeta mais equilibrado. Educar a sociedade sobre a importância da ecologia é fundamental para garantir um futuro sustentável para as próximas gerações. <br><br>
+
+            Em resumo, a ecologia é uma ciência vital que permite compreender a vida em seu contexto mais amplo, ajudando a proteger os recursos naturais e promover uma convivência mais harmoniosa entre os seres humanos e a natureza.
+
+            <h2>sustentabilidade</h2>
+
+            Sustentabilidade é basicamente cuidar das necessidades de hoje sem prejudicar o que as futuras gerações vão precisar. <br><br>
+
+            Isso significa usar os recursos naturais com responsabilidade, cuidar do meio ambiente, lutar por justiça social e promover o desenvolvimento econômico. No final das contas, o objetivo é encontrar um jeito de equilibrar a convivência entre o planeta, as pessoas e a economia, garantindo um futuro bom para todo mundo.<a href="#" onclick="showSection('sustentabilidade')">Saiba mais</a>
+
+            <h2>Desmatamento</h2>
+
+            O desmatamento refere-se à remoção ou destruição de florestas e coberturas vegetais, o que resulta em solo exposto e perda de biodiversidade. Este processo pode ser causado por atividades humanas e naturais, mas a maior parte do desmatamento atualmente é atribuída a ações humanas.<br><br>
+
+            <h3>Causas do Desmatamento<br><br></h3>
+
+            Agricultura: A expansão de áreas agrícolas para cultivar produtos como soja e óleo de palma é uma das principais causas do desmatamento. Fazendas e plantações ocupam grandes extensões de floresta.<br><br>
+
+            Pastoreio: A criação de gado frequentemente resulta na conversão de florestas em pastagens, contribuindo significativamente para a degradação de ecossistemas.<br><br>
+
+            Exploração Madeireira: A extração de madeira, tanto legal quanto ilegal, contribui para a perda de árvores e a erosão do solo.<br><br>
+
+            Desenvolvimento Urbano: O crescimento das cidades e de infraestruturas, como estradas, representa uma pressão adicional sobre áreas florestais.<br><br>
+
+            Mineração: As atividades de mineração, especialmente em florestas tropicais, podem resultar na destruição de grandes áreas de vegetação.<br><br>
+
+            O desmatamento é um problema ambiental global que requer uma abordagem multidimensional, envolvendo políticas públicas, conscientização comunitária, e práticas sustentáveis. A preservação das florestas é crucial para a saúde do planeta, a biodiversidade e o bem-estar humano.<a href="#" onclick="showSection('desmatamento')">Saiba mais</a><br></br>
+
+<h2>Poluição dos Oceanos<br></br></h2>
+
+            A poluição nos oceanos é um dos mais graves problemas ambientais enfrentados pelo planeta atualmente. Este fenômeno refere-se à introdução de substâncias ou agentes poluentes que alteram a qualidade da água e do ecossistema marinho, prejudicando a vida marinha e os seres humanos que dependem dos oceanos.<br></br>
+
+            A poluição nos oceanos é uma questão crítica que necessita de atenção global. O envolvimento de comunidades, indústrias e governos é essencial para implementar soluções eficazes e proteger nossos ecossistemas marinhos. <a href="#" onclick="showSection('oceanos')">Saiba Mais</a><br></br>
+
+           <h3> Representação de efeitos que o homen afeta ao Meio Ambiente</h3><br></br>
+
+          
+            <iframe src="https://www.youtube.com/embed/WfGMYdalClU" width="620" height="515"> </iframe><br></br>
+
+            <h3>Como Podemos Ajudar?</h3><br></br>
+            
+            <a href="#" onclick="showSection('como-ajudar')">Saiba Mais</a> sobre como você pode ajudar a combater a poluição e fazer a diferença no meio ambiente!
+        </p>
+    </section>
+
+    <section id="sustentabilidade">
+        <h2>Importância da Sustentabilidade</h2>
+        <p>
+            A sustentabilidade é fundamental para garantir a sobrevivência do planeta e o bem-estar das futuras gerações. Ela se baseia no uso consciente dos recursos naturais, buscando atender às necessidades do presente sem comprometer a capacidade das próximas gerações de suprirem as suas próprias necessidades. <br><br>
+
+            Em um mundo com crescimento populacional acelerado e consumo excessivo, a sustentabilidade surge como uma resposta aos impactos ambientais causados pelas ações humanas. Práticas sustentáveis visam reduzir a poluição, conservar a biodiversidade, combater as mudanças climáticas e evitar o esgotamento dos recursos naturais. <br><br>
+
+            Adotar atitudes sustentáveis é essencial tanto em nível individual quanto coletivo. Pequenas ações do dia a dia, como economizar água e energia, reciclar resíduos, evitar o desperdício de alimentos e optar por transportes menos poluentes, fazem uma grande diferença a longo prazo. <br><br>
+
+            No setor empresarial e governamental, a sustentabilidade também ganha destaque. Empresas estão cada vez mais comprometidas com práticas responsáveis, como reduzir a emissão de gases poluentes, utilizar fontes de energia renovável e promover a economia circular. Políticas públicas voltadas à educação ambiental e ao incentivo de tecnologias limpas são cruciais para alcançar esse objetivo. <br><br>
+
+            Em resumo, a sustentabilidade é uma escolha inteligente e necessária. Ela promove equilíbrio entre crescimento econômico, preservação ambiental e justiça social. Investir em um estilo de vida sustentável é investir em um futuro mais justo, saudável e equilibrado para todos.
+        </p>
+        <img src="https://smastr16.blob.core.windows.net/portaleducacaoambiental/sites/201/2021/11/energia-renovavel-1024x1024.jpg" alt="Energia renovável" />
+    </section>
+
+    <section id="desmatamento">
+        <h2>Desmatamento</h2>
+        <p>O desmatamento é um dos maiores problemas ambientais do mundo, pois contribui para a perda da biodiversidade, emissões de gases de efeito estufa e o desequilíbrio ecológico. O Brasil, por exemplo, enfrenta um grande desafio com o desmatamento da Amazônia.</p>
+        <p>O desmatamento tem impactos graves, como a redução da qualidade do solo, o aumento da erosão e a perda de espécies animais e vegetais. Além disso, ele contribui diretamente para o aumento das emissões de carbono, uma vez que as árvores, ao serem derrubadas, deixam de desempenhar seu papel de absorver CO₂ da atmosfera.</p>
+        <p>Estima-se que, a cada ano, milhões de hectares de floresta sejam destruídos, o que resulta em um impacto direto sobre o clima global. A destruição da Amazônia, por exemplo, afeta a régua de chuvas em várias partes do Brasil e pode agravar a seca em algumas regiões.</p>
+        <p>Além disso, o desmatamento ilegal é uma das principais causas da degradação ambiental, uma vez que não há controle ou fiscalização sobre as áreas desmatadas. Em muitos casos, grandes áreas são derrubadas para dar lugar a plantações de monocultura, pastagens ou empreendimentos imobiliários.</p>
+        <p>A perda da cobertura florestal também afeta diretamente as comunidades indígenas e populações locais que dependem da floresta para sua sobrevivência, além de provocar o deslocamento de inúmeras espécies de fauna e flora, colocando-as em risco de extinção.</p>
+        <p>O combate ao desmatamento envolve políticas públicas eficazes, como o fortalecimento da fiscalização, a promoção de alternativas sustentáveis para o uso da terra e o incentivo ao reflorestamento. Também é fundamental o engajamento da sociedade e das empresas em práticas mais responsáveis e sustentáveis, que visem à preservação das florestas e à recuperação das áreas degradadas.</p>
+        <p>Iniciativas de reflorestamento têm sido desenvolvidas em várias partes do mundo, mas ainda é necessário mais esforço para garantir que o ritmo de recuperação seja mais rápido do que o de destruição.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yktUyC7Yqog" title="Desmatamento: causas e consequências" allowfullscreen></iframe>
+    </section>
+
+    <section id="oceanos">
+        <h2>Poluição dos Oceanos</h2>
+        <p>A poluição nos oceanos é um dos maiores desafios ambientais da atualidade. Milhares de toneladas de resíduos, especialmente plásticos, são despejadas nos mares anualmente, afetando a vida marinha e os ecossistemas.</p>
+        <p>Estudos indicam que mais de 8 milhões de toneladas de plástico entram nos oceanos todos os anos. Esses plásticos podem se fragmentar em microplásticos, que são consumidos por animais marinhos e entram na cadeia alimentar. Isso pode afetar uma ampla gama de organismos, desde o plâncton até grandes mamíferos marinhos.</p>
+        <p>Além disso, o plástico leva centenas de anos para se decompor, o que significa que muito do plástico lançado nos oceanos continua a circular por gerações. À medida que o plástico se fragmenta em pedaços menores, ele se torna invisível a olho nu, mas continua sendo prejudicial para a fauna marinha.</p>
+        <p>Os plásticos também liberam produtos químicos tóxicos à medida que se degradam, como aditivos usados para dar cor ou aumentar a durabilidade dos plásticos. Esses produtos químicos podem ser absorvidos por organismos marinhos, prejudicando sua saúde e afetando toda a cadeia alimentar marinha.</p>
+        <p>O impacto da poluição plástica não se limita apenas à ingestão direta pelos animais. Muitas espécies marinhas, como tartarugas e aves, ficam presas a redes de pesca, sacolas plásticas e outros detritos. Isso pode causar ferimentos graves, dificultando sua alimentação e reprodução.</p>
+        <p>Outro problema grave são as "ilhas de lixo", enormes concentrações de resíduos plásticos que flutuam nos oceanos, como a Grande Mancha de Lixo do Pacífico. Essas áreas não só afetam a biodiversidade marinha, mas também alteram os ecossistemas locais e dificultam a navegação e a pesca.</p>
+        <p>Estudos também mostram que a poluição nos oceanos afeta os recifes de corais. Os resíduos plásticos podem sufocar os corais e afetar sua capacidade de fotossíntese, o que resulta em seu enfraquecimento e morte. Isso tem implicações devastadoras para toda a vida marinha que depende dos recifes para alimento e abrigo.</p>
+        <p>As microesferas plásticas, presentes em produtos de limpeza e cosméticos, também são uma grande preocupação. Elas são muito pequenas para serem filtradas pelos sistemas de tratamento de água, o que significa que acabam diretamente nos oceanos, onde são consumidas por organismos microscópicos que fazem parte da base da cadeia alimentar marinha.</p>
+        <p>Esses microplásticos podem acumular-se nos tecidos dos animais e, ao longo do tempo, afetar suas funções biológicas e seu crescimento. As espécies marinhas também podem acumular metais pesados e outros poluentes presentes nos plásticos, o que pode ter efeitos a longo prazo sobre sua saúde.</p>
+        <p>Além dos plásticos, os oceanos também enfrentam poluição por produtos químicos, como pesticidas e produtos industriais, que são descartados sem tratamento adequado. Esses poluentes podem tornar-se solúveis em água, afetando a qualidade da água e prejudicando os organismos marinhos que dependem dela para sobreviver.</p>
+        <p>O lixo proveniente de atividades de turismo e pesca também contribui significativamente para a poluição nos oceanos. Muitos turistas e pescadores não seguem práticas adequadas de descarte de resíduos, o que resulta no acúmulo de detritos em praias e águas costeiras, afetando os ecossistemas locais.</p>
+        <p>Em algumas regiões, os oceanos também estão sendo contaminados com substâncias radioativas e metais pesados, provenientes de atividades industriais e militares. Esses poluentes podem afetar a saúde dos animais marinhos e também contaminar a cadeia alimentar humana, uma vez que muitos desses contaminantes acumulam-se em organismos marinhos que são consumidos por seres humanos.</p>
+        <p>A poluição do oceano também tem implicações econômicas. A indústria pesqueira sofre com a redução das populações de peixes e a contaminação de frutos do mar, afetando as comunidades que dependem da pesca para sua subsistência. Além disso, os turistas que visitam áreas afetadas por poluição tendem a evitar essas regiões, prejudicando a economia local.</p>
+        <p>Uma das consequências mais preocupantes da poluição marinha é o "desaparecimento" de muitos ecossistemas marinhos vitais, como manguezais e seagrasses. Esses ecossistemas não apenas servem como habitat para uma vasta gama de espécies marinhas, mas também desempenham um papel crucial na absorção de carbono e na proteção das costas contra tempestades e erosão.</p>
+        <p>Por fim, as iniciativas para combater a poluição nos oceanos incluem a promoção de políticas globais de redução de plásticos, como a implementação de leis para limitar o uso de plásticos de uso único e o incentivo à reciclagem. A conscientização pública também desempenha um papel fundamental, com campanhas educacionais para reduzir o desperdício e promover práticas de descarte adequado.</p>
+        <h3>Plástico nos Oceanos</h3>
+        <p>Estudos indicam que mais de 8 milhões de toneladas de plástico entram nos oceanos todos os anos. Esses plásticos podem se fragmentar em microplásticos, que são consumidos por animais marinhos e entram na cadeia alimentar.</p>
+        <p>Os plásticos são encontrados desde as praias até os pontos mais profundos do oceano, afetando uma vasta gama de organismos marinhos. Eles podem ser encontrados em todas as camadas da coluna d'água, desde as superfícies até os fundos marinhos mais profundos, afetando tanto os ecossistemas costeiros quanto os de alto-mar.</p>
+        <p>Além disso, o plástico demora centenas de anos para se decompor, o que significa que muito do plástico lançado nos oceanos continua a circular por gerações. A degradação do plástico em microplásticos também contribui para a crescente contaminação dos oceanos.</p>
+        <p>O impacto do plástico não se limita aos resíduos visíveis. Os plásticos também liberam produtos químicos tóxicos, como aditivos e compostos químicos, que podem prejudicar a saúde dos organismos marinhos e dos seres humanos. Esses produtos químicos podem afetar o sistema endócrino dos animais, alterar sua reprodução e até mesmo levar à morte.</p>
+        <h3>Impacto na Vida Marinha</h3>
+        <p>O impacto na vida marinha vai muito além da ingestão e da prisão de animais em plásticos. A presença desses materiais afeta diretamente os ecossistemas marinhos de diversas formas. O plástico pode modificar o comportamento dos animais, alterando suas rotas migratórias e afetando sua capacidade de reprodução.</p>
+        <p>Além disso, as comunidades marinhas dependem de um equilíbrio ecológico delicado. O plástico interfere em várias cadeias alimentares, desde pequenos organismos filtradores até grandes predadores marinhos, comprometendo a saúde e a estabilidade do ecossistema marinho. Espécies que dependem de alimentos específicos podem sofrer com a escassez de recursos devido à presença dos plásticos.</p>
+        <p>Espécies como tartarugas, aves marinhas, golfinhos e peixes frequentemente ingerem plásticos, confundindo-os com alimentos. Isso pode causar obstruções no trato digestivo, intoxicação e até a morte. Além disso, o plástico ingerido pode acumular-se em seus sistemas, afetando sua capacidade de absorver nutrientes, resultando em inanição e doenças.</p>
+        <p>Além da ingestão, muitos animais também ficam presos em redes e embalagens plásticas, o que compromete sua mobilidade e sobrevivência. O "embrulho" em plásticos pode causar ferimentos graves, limitar a capacidade de forrageamento e até mesmo levar à morte por asfixia.</p>
+        <p>Pesquisas também sugerem que a ingestão de microplásticos pode ter um efeito cumulativo nas populações de peixes e outros organismos marinhos, com impactos negativos para toda a biodiversidade marinha e até mesmo para os seres humanos, que consomem frutos do mar contaminados.</p>
+        <p>Outro grande problema é o impacto das microesferas plásticas presentes em cosméticos e produtos de limpeza, que acabam sendo descartadas diretamente nos oceanos e aumentam a poluição marinha de forma invisível. Essas microesferas podem ser ingeridas por animais marinhos microscópicos, que fazem parte da base da cadeia alimentar, afetando todos os níveis da vida marinha.</p>
+        <p>Além disso, as grandes ilhas de lixo plástico nos oceanos, como a Grande Mancha de Lixo do Pacífico, são uma das maiores concentrações de resíduos plásticos do mundo, afetando a biodiversidade e criando um ambiente tóxico para os animais marinhos. Essas áreas de lixo não apenas afetam a fauna local, mas também alteram os ecossistemas marinhos em grande escala.</p>
+        <p>A poluição nos oceanos também afeta a pesca comercial, uma das principais fontes de alimento para milhões de pessoas ao redor do mundo. O plástico e outros poluentes podem contaminar os peixes, tornando-os impróprios para consumo humano. Isso impacta negativamente a economia pesqueira, especialmente em regiões dependentes dessa indústria.</p>
+        <p>Estudos mostram que, até 2050, haverá mais plástico no oceano do que peixes, o que representa uma ameaça direta à segurança alimentar global. A situação é tão grave que muitas organizações ambientais estão lutando para implementar políticas mais rigorosas sobre a produção e descarte de plásticos, além de promover a reciclagem e a limpeza das águas.</p>
+        <h3>Referências Científicas</h3>
+        <ul>
+            <li><a href="https://www.nature.com/articles/s41586-018-0384-3" target="_blank">Nature: Evidence that the Great Pacific Garbage Patch is rapidly accumulating plastic</a></li>
+            <li><a href="https://www.sciencedirect.com/science/article/pii/S0025326X17305405" target="_blank">Marine Pollution Bulletin: Impacts of plastic debris on marine wildlife</a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/30223179/" target="_blank">PubMed: Microplastic ingestion by fish</a></li>
+        </ul>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/adc0cOqE4qs" title="Poluição Oceânica: O Impacto nos Mares e Oceanos" allowfullscreen></iframe>
+    </section>
+
+    <section id="como-ajudar">
+        <h2>Como Podemos Ajudar?</h2>
+        <p>Existem muitas maneiras de ajudar na preservação do meio ambiente, e cada ação conta! Vamos ver algumas formas práticas de contribuir para um mundo mais sustentável:</p>
+        <ul>
+            <li>Reduzir o uso de plásticos e produtos descartáveis</li>
+            <li>Adotar hábitos de consumo consciente e comprar produtos locais</li>
+            <li>Investir em energias renováveis e economizar água e energia</li>
+            <li>Reciclar e separar o lixo corretamente</li>
+            <li>Participar de programas de reflorestamento e proteção da fauna</li>
+            <li>Denunciar crimes ambientais e pressionar por políticas ambientais eficazes</li>
+            <li>Educar outras pessoas sobre a importância da sustentabilidade e do respeito ao meio ambiente</li>
+        </ul>
+        <img src="https://brazabe.com.br/wp-content/uploads/2021/05/a-brazabe-e-a-sustentabilidade.jpg" alt="Reflorestamento" />
+
+        <h3> 1. Reduzir, Reutilizar e Reciclar<br></br></h3> 
+        Reduzir: Evite produtos desnecessários e escolha itens com menos embalagem.
+        Reutilizar: Utilize sacolas de pano, garrafas reutilizáveis e recipientes para diminuir o uso de plásticos descartáveis.
+        Reciclar: Separe e reciclar materiais como plástico, papel, vidro e metal conforme as diretrizes locais.
+
+        <h3> 2. Optar por Produtos Sustentáveis<br></br></h3> 
+        Escolha produtos ecológicos, como alimentos orgânicos, produtos de limpeza biodegradáveis e cosméticos sem embalagens plásticas.
+
+        <h3> 3. Praticar a Mobilidade Sustentável<br></br></h3> 
+        Use transporte público, caminhe, ande de bicicleta ou compartilhe caronas para minimizar as emissões de carbono.
+        Considere a compra de veículos elétricos ou híbridos se precisar de um carro.
+
+        <h3> 4. Contribuir para a Conservação da Natureza<br></br></h3> 
+        Participe de programas de plantio de árvores e atividades de limpeza de praias ou parques.
+        Apoie reservas naturais e parques nacionais através de doações ou voluntariado.
+
+        <h3> 5. Educação e Conscientização<br></br></h3> 
+        Informe-se e envolva amigos e familiares em discussões sobre práticas sustentáveis.
+        Participe ou organize palestras e workshops sobre proteção ambiental.
+        </section>
+        </main>
+
+        <footer>
+          <p>© 2025 - Projeto Ecologia. Desenvolvido com 💚 para um mundo melhor.</p>
+        </footer>
+
+        <button class="back-to-top">&#x2B06;</button>
+
+        <script>
+        function showSection(id) {
+        const sections = document.querySelectorAll('main section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        const target = document.getElementById(id);
+        if (target) {
+            target.classList.add('active');
+        }
+    }
+
+   
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode',isDarkMode);
+        const icon = document.getElementById("theme-icon");
+        icon.textContent = isDarkMode ? "☀️" : "🌙";
+    });
+
+   
+    if (localStorage.getItem('darkMode') === 'true') {
+        body.classList.add('dark-mode');
+    }
+
+  
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</body>
+</html>
